@@ -1,3 +1,5 @@
 venv
-sqilte
+db.sqilte3
 requests.log
+__pycache__/
+.env
