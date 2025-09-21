@@ -18,3 +18,10 @@ class BlockedIP(models.Model):
 
     def __str__(self):
         return f"Blocked IP: {self.ip_address}"
+
+class SuspiciousIP(models.Model):
+    ip_address = models.CharField(max_length=45)
+    reason = models.TextField()
+
+    def __str__(self):
+        return f"Suspicious {self.ip_address}: {self.reason}" 

@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ip_tracking.apps.IpTrackingConfig',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,8 @@ IP_GEOLOCATION_SETTINGS = {
     'FORCE_IP_ADDR': None,
     'USER_CONSENT_VALIDATOR': None
     }
+
+# CELERY settings - This is the message broker that will be used to send and receive messages from the celery worker
+CELERY_BROKER_URL = "redis://127.0.0.1:6379"
+
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379"
